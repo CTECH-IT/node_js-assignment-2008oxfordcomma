@@ -13,4 +13,9 @@ bot.on("ready", async () => {
   bot.user.setStatus("idle");
 });
 
+bot.on ("message", async(message) => {
+  if (message.author.bot) return; // stops bots from using this bot
+  if (message.channel.type == "dm") return; // stops bot from being DM'ed
+});
+
 bot.login(config.token);
