@@ -1,8 +1,20 @@
 {
+  "name": "dreyfusbot",
+  "version": "1.0.0",
+  "description": "Dre's Discord bot made with Node.js",
+  "main": "index.js",
   "dependencies": {
-    "express": "^4.17.3",
-    "formidable": "^2.0.1",
-    "nodemailer": "^6.7.3",
-    "upper-case": "^2.0.2"
-  }
+    "discord.js": "^11.6.4",
+    "forever": "^0.15.3",
+    "node": "^14.2.0",
+    "nodemon": "^2.0.4",
+    "random-puppy": "^1.1.0",
+    "request": "^2.88.2",
+    "sync-request": "^6.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dre Harm",
+  "license": "GNU"
 }
