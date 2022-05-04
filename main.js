@@ -1,26 +1,16 @@
-var nodemailer = require('nodemailer');
-var myEmail = 'placeHolderEmail';
-var myPassword = 'placeHolderPassword';
+const config = require("./botconfig.json");
+var Discord = require("discord.js");
+var request = require("request");
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: myEmail,
-    pass: myPassword,
-  }
+const bot = new Discord.Client();
+
+/* Outputs verification that the bot is active in the console
+Sets the activity and status of the bot */
+bot.on("ready", async () => {
+  console.log(`${bot.user.username} is online`);
+
+  bot.user.setActivity("The game of life.", { type: "PLAYING" });
+  bot.user.setStatus("idle");
 });
 
-var mailOptions = {
-  from: myEmail,
-  to: 'jobartucz@isd535.org',
-  subject: 'Node JS Email',
-  html: '<p>Hey Mr.Bartucz,<br /><br />This is my email sent to you with Node.js.<br /><br />Sincerely,<br>Dre Harm</p>',
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
+bot.login(config.token);
